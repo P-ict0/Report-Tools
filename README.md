@@ -1,16 +1,14 @@
 # Welcome!
 
-This is a **simple markdown Table of Contents Generator**
+These are **simple markdown tools**
 
 ## Usage:
 
 ```bash
-git clone https://github.com/P-ict0/TOC-Generator-Markdown.git
+git clone https://github.com/P-ict0/Markdown-Formatting-Tools.git
 ```
 
 Then, run
 ```bash
-python3 create-markdown-toc.py <filename>
+python3 tool.py
 ```
-
-This will spit out a markdown table of contents of that file so you can copy-paste it into your project!
