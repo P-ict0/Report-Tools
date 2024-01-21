@@ -2,12 +2,21 @@ import re
 import sys
 
 def main(filename: str) -> str:
+
+    contents = read_file(filename)
+    toc = generate_toc(contents)
+    results = print_ToC(toc)
+    print(results)
+
+
+def print_ToC(toc: list[str]) -> str:
+    return '\n'.join(toc)
+
+
+def read_file(filename: str) -> list[str]:
     with open(filename, 'r') as f:
         lines = f.readlines()
-
-    toc = generate_toc(lines)
-
-    return '\n'.join(toc)
+    return lines
 
 
 def generate_toc(lines: list[str]) -> list[str]:
@@ -38,6 +47,5 @@ if __name__ == '__main__':
         sys.exit(1)
 
     filename = sys.argv[1]
-    result = main(filename)
-    print(result)
+    main(filename)
 
