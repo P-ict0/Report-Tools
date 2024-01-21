@@ -4,11 +4,11 @@ These are **simple Python tools** to help with your MarkDown reporting.
 
 ## Contents
 
-### Create markdown file tree (create-markdown-file-tree.py)
+### `create-markdown-file-tree.py`
 
 Creates a filetree to include in your `README` linking to each file in the project (ignores hidden files)
 
-### Create markdown Table of Contents (create-markdown-toc.py)
+### `create-markdown-toc.py`
 
 Creates a Table of Contents of a markdown file to add it to the top of the file and navigate easily.
 
