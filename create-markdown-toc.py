@@ -1,4 +1,5 @@
 import re
+import sys
 
 def main(filename: str) -> str:
     with open(filename, 'r') as f:
@@ -32,7 +33,11 @@ def generate_toc(lines: list[str]) -> list[str]:
 
 
 if __name__ == '__main__':
-    filename = r'filename'
+    if len(sys.argv) < 2:
+        print('Usage: python3 create-markdown-toc.py <filename>')
+        sys.exit(1)
+
+    filename = sys.argv[1]
     result = main(filename)
     print(result)
 
