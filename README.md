@@ -1,2 +1,4 @@
-# TOC-Generator-Markdown
- Simple Markdown generator of ToC
+# Simple Markdown Table of Contents Generator
+
+## Usage:
+
