@@ -3,25 +3,19 @@ import sys
 
 def main(filename: str) -> str:
 
-    contents = read_file(filename)
-    toc = generate_toc(contents)
-    results = print_ToC(toc)
-    print(results)
-
-
-def print_ToC(toc: list[str]) -> str:
-    return '\n'.join(toc)
-
+    toc = generate_toc(filename)
+    print("\n".join(toc))
 
 def read_file(filename: str) -> list[str]:
     with open(filename, 'r') as f:
         lines = f.readlines()
     return lines
 
-
-def generate_toc(lines: list[str]) -> list[str]:
+def generate_toc(filename: str) -> list[str]:
     toc = []
     inside_code_block = False
+
+    lines = read_file(filename)
 
     for line in lines:
         if line.startswith('```'):

@@ -4,8 +4,7 @@ import urllib.parse
 
 def main(dirname: str) -> None:
     tree = generate_tree(dirname)
-    markdown_tree = print_tree(tree)
-    print(markdown_tree)
+    print("\n".join(tree))
 
 def read_dir(dirname: str) -> list[str]:
     files = []
@@ -27,13 +26,15 @@ def generate_tree(dirname: str) -> list[str]:
         filenames[:] = [f for f in filenames if not f.startswith('.')]
 
         level = root.replace(dirname, '').count(os.sep)
-        indent = '  ' * (level)
-        contents.append(f'{indent}- {os.path.basename(root)}')
-        subindent = '  ' * (level + 1)
+        subindent = '  ' * (level)
         for file in filenames:
             file_path = os.path.relpath(os.path.join(root, file), dirname).replace("\\","/")
+
+            # Url encode the file path
             processed_file_path = urllib.parse.quote(file_path)
-            link_text = os.path.splitext(file)[0]  # Remove file extension from link text
+
+            # Remove file extension from link text
+            link_text = os.path.splitext(file)[0]
             contents.append(f'{subindent}- [{link_text}]({processed_file_path})')
 
     return contents
