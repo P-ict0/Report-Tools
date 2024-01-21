@@ -24,7 +24,7 @@ def generate_toc(lines: list[str]) -> list[str]:
             # Generate the corresponding indentation for the toc
             indentation = '    ' * (heading_level - 1) if heading_level > 1 else ''
 
-            processed_title = re.sub(r'[^\w\s]', '', title).lstrip().lower().replace(' ', '-').replace('--', '-')
+            processed_title = re.sub(r'[^\w\s-]', '', title).lstrip().lower().replace(' ', '-')
 
             toc.append(f'{indentation}- [{title}](#{processed_title})')
 
