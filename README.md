@@ -16,9 +16,6 @@ Creates a Table of Contents of a markdown file to add it to the top of the file 
 
 ```bash
 git clone https://github.com/P-ict0/Report-Tools.git
-```
-
-Then, run
-```bash
+cd Report-Tools
 python3 tool.py
 ```
