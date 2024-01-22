@@ -42,7 +42,7 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description='Generate Contents with links to files of a given directory')
     parser.add_argument('--ignore-hidden', '--ih', action='store_true', help='Ignore hidden files and directories')
-    parser.add_argument('--url-encode', '--ue', action='store_true', help='Don`t url encode the file path')
+    parser.add_argument('--url-encode', '--ue', action='store_true', help='Url encode the file path')
     parser.add_argument('dirname', type=str, help='Directory to generate contents for')
     args = parser.parse_args()
 
